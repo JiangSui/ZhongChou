@@ -8,6 +8,7 @@
     <artifactId>scwcommon</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+
     <dependencies>
         <!--apache 官方的 服务器发送请求到服务器的工具   s t s-->
         <dependency>
