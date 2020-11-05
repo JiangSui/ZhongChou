@@ -1,0 +1,47 @@
+server:
+  port: 7000
+spring:
+  #数据源配置
+  datasource:
+    username: root
+    password: 1234
+    url: jdbc:mysql://localhost:3306/atcrowdfunding?useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver # 数据库驱动
+    type: com.alibaba.druid.pool.DruidDataSource  #数据源
+    filters: stat  #开启监控过滤器  这是druid的监控器
+  application:
+    name: SCWUSER
+  #redis配置
+  redis:
+    host: 192.168.188.146
+    port: 6379
+    database: 1
+
+
+#mybatis 配置
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml #配置文件
+  mapper-locations: classpath:com/offcn/user/mapper/*.xml #映射文件地址
+
+#springboot 底层默认使用slf+log4j 日志记录
+logging:
+  file:
+    path: E:\IDEA WorkSpace\log\scw-user #日志存储地址
+  level:
+    com:
+      offcn: debug   #配置日志将空路径,和 级别
+
+
+#短信配置
+sms:
+  host: http://dingxin.market.alicloudapi.com
+  path: /dx/sendSms
+  method: POST
+  appcode: 94c33e59301d4e5484dd3c58aab52188
+#eureka 客户端配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true

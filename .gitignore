@@ -1,0 +1,5 @@
+# Project exclude paths
+/scwcommon/target/
+/scwparent/scworder/target/
+/scwparent/scwproject/target/
+/scwparent/scwuser/target/
